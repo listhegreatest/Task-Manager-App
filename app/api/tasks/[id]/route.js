@@ -25,3 +25,8 @@ export async function DELETE(request) {
   }
 }
 
+export async function PATCH(request) {
+    const url = request.nextUrl.pathname;
+    const idStr = url.split('/').pop();
+    const id = parseInt(idStr);
+    const body = await request.json();
