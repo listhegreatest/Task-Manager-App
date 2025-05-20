@@ -30,3 +30,22 @@ export async function PATCH(request) {
     const idStr = url.split('/').pop();
     const id = parseInt(idStr);
     const body = await request.json();
+
+    if (isNaN(id)) {
+        return NextResponse.json({ error: 'Invalid ID' }, { status: 400 });
+      }
+    
+      try {
+        const updatedTask = await prisma.task.update({
+          where: { id },
+          data: body,
+        });
+    
+        return NextResponse.json(updatedTask);
+      } catch (error) {
+        return NextResponse.json(
+          { error: 'Failed to update task' },
+          { status: 500 }
+        );
+      }
+    }
