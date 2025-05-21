@@ -12,14 +12,16 @@ export default function Home() {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [newTask, setNewTask] = useState('');
 
-  // Fetch tasks on page load
+  // EDITING STATES
+  const [editingTaskId, setEditingTaskId] = useState<number | null>(null);
+  const [editingTitle, setEditingTitle] = useState('');
+
   useEffect(() => {
     fetch('/api/tasks')
       .then(res => res.json())
       .then(data => setTasks(data));
   }, []);
 
-  // Create a new task
   const handleAddTask = async () => {
     if (!newTask.trim()) return;
     const res = await fetch('/api/tasks', {
@@ -40,6 +42,37 @@ export default function Home() {
     setTasks(prevTasks => prevTasks.filter(task => task.id !== id));
   }
 
+  // Start editing a task
+  const startEditing = (task: Task) => {
+    setEditingTaskId(task.id);
+    setEditingTitle(task.title);
+  };
+
+  // Cancel editing
+  const cancelEditing = () => {
+    setEditingTaskId(null);
+    setEditingTitle('');
+  };
+
+  // Save edited task
+  const saveEdit = async (id: number) => {
+    if (!editingTitle.trim()) return;
+    const res = await fetch(`/api/tasks/${id}`, {
+      method: 'PUT',  // your API method
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ title: editingTitle }),
+    });
+
+    if (res.ok) {
+      const updatedTask = await res.json();
+      setTasks(prev =>
+        prev.map(task => (task.id === id ? updatedTask : task))
+      );
+      cancelEditing();
+    } else {
+      alert('Failed to update task');
+    }
+  };
 
   return (
     <main className="p-8">
@@ -61,18 +94,50 @@ export default function Home() {
       </div>
 
       <ul>
-  {tasks.map(task => (
-    <li key={task.id} className="mb-2 flex justify-between items-center">
-      {task.title}
-      <button
-        className="ml-4 text-red-600 hover:underline"
-        onClick={() => deleteTask(task.id)}
-      >
-        Delete
-      </button>
-    </li>
-  ))}
-</ul>
-</main>
+        {tasks.map(task => (
+          <li key={task.id} className="mb-2 flex justify-between items-center">
+            {editingTaskId === task.id ? (
+              <>
+                <input
+                  className="border p-1 mr-2 rounded flex-grow"
+                  value={editingTitle}
+                  onChange={e => setEditingTitle(e.target.value)}
+                />
+                <button
+                  className="bg-green-500 text-white px-2 py-1 rounded mr-2"
+                  onClick={() => saveEdit(task.id)}
+                >
+                  Save
+                </button>
+                <button
+                  className="bg-gray-400 text-white px-2 py-1 rounded"
+                  onClick={cancelEditing}
+                >
+                  Cancel
+                </button>
+              </>
+            ) : (
+              <>
+                <span>{task.title}</span>
+                <div>
+                  <button
+                    className="text-blue-600 hover:underline mr-4"
+                    onClick={() => startEditing(task)}
+                  >
+                    Edit
+                  </button>
+                  <button
+                    className="text-red-600 hover:underline"
+                    onClick={() => deleteTask(task.id)}
+                  >
+                    Delete
+                  </button>
+                </div>
+              </>
+            )}
+          </li>
+        ))}
+      </ul>
+    </main>
   );
 }
