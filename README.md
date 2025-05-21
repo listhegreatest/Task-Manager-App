@@ -10,7 +10,7 @@ This project was created as a final assignment for the Immersive Engineering Lab
 
  ## Live Demo
 
- [Live Site on Vercel](https://roomease.vercel.app)
+ [Live Site on Vercel] https://task-manager-fsfnm64yf-lispena444-gmailcoms-projects.vercel.app
 
 ---
 
@@ -90,5 +90,5 @@ This project was created as a final assignment for the Immersive Engineering Lab
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/roomease.git
+git clone https://github.com/listhegreatest/Task-Manager-App
 cd roomease
