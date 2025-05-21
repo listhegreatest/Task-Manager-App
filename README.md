@@ -1,40 +1,94 @@
-<<<<<<< HEAD
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## RoomEase – Roommate Management App
+
+## Project Overview
+
+RoomEase is a full-stack web application designed to simplify household management between roommates. Users can log in, create and manage chores, expenses, and bills, and track completed tasks in real time. The goal is to create a shared space where transparency and collaboration thrive in a shared-living environment.
+
+This project was created as a final assignment for the Immersive Engineering Lab, showcasing complete systems architecture and integration of core components of a modern web app.
+
+---
+
+ ## Live Demo
+
+ [Live Site on Vercel](https://roomease.vercel.app)
+
+---
+
+## Technologies Used
+
+### Frontend:
+- React (with Next.js)
+- Tailwind CSS
+- Axios
+
+### Backend:
+- Next.js API routes
+- Prisma ORM
+- PostgreSQL (via Neon)
+- Zod (validation)
+
+### Other Tools & APIs:
+- Vercel (deployment)
+- Git & GitHub (version control)
+- OpenAI API (chore suggestion tool) – _optional bonus feature_
+
+---
+
+## Features
+
+### Frontend (1 Point)
+- Built with **React (Next.js)**.
+- Responsive design using **Tailwind CSS**.
+- Client-side interactivity:
+  - Dynamic routing
+  - Chore form submissions
+  - State-based task completion toggling
+
+### Backend (1 Point)
+- Next.js API routes.
+- Handles routing, validation with Zod, and database interaction via Prisma.
+- Exposes **at least two API endpoints**:
+  - `POST /api/chores`
+  - `GET /api/chores`
+  - `DELETE /api/chores/:id`
+
+### Database Integration (1 Point)
+- Connected to **PostgreSQL** via **Neon**.
+- Implements full **CRUD operations**:
+  - Create new chores
+  - Read all chores
+  - Update task completion status
+  - Delete completed tasks
+
+### API Integration (1 Point)
+- **Axios** used on the frontend to send HTTP requests to backend API routes.
+- Includes client-side and server-side **error handling** and loading states.
+
+### Deployment (1 Point)
+- Deployed on **Vercel**.
+- Publicly accessible.
+- Live URL linked above and in this README.
+
+### Git & Version Control (1 Point)
+- More than 10 meaningful commits made throughout the project.
+- Clear, descriptive commit messages (e.g., `Added delete chore API route`, `Connected Neon DB to Prisma`).
+- GitHub repository includes:
+  - This complete README
+  - `.env.example` file
+  - Setup instructions
+  - Deployment link
+  - Reflection section below
+
+### Bonus: Creativity & Technical Ingenuity (+1 Point)
+- Integrated with **OpenAI's GPT API** to provide smart chore suggestions (_optional toggleable feature_).
+- Elegant and responsive UI/UX design using **Tailwind**.
+- Clear component separation and state management.
+
+---
 
 ## Getting Started
 
-First, run the development server:
-
+### 1. Clone the Repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-=======
-# Task-Manager-App
->>>>>>> 1c20977f26672acef77959f9f05d2093d639261f
+git clone https://github.com/yourusername/roomease.git
+cd roomease
