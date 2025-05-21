@@ -4,7 +4,7 @@
 
 RoomEase is a full-stack web application designed to simplify household management between roommates. Users can log in, create and manage chores, expenses, and bills, and track completed tasks in real time. The goal is to create a shared space where transparency and collaboration thrive in a shared-living environment.
 
-This project was created as a final assignment for the Immersive Engineering Lab, showcasing complete systems architecture and integration of core components of a modern web app.
+This project was created as a final assignment, showcasing complete systems architecture and integration of core components of a modern web app.
 
 ---
 
