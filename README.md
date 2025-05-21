@@ -112,6 +112,8 @@ Example: DATABASE_URL=your_neon_database_url
 
 ##Run the Development Server 
 npm run dev 
+
+Open your browser and navigate to http://localhost:3000 to view the app.
  
 
 
