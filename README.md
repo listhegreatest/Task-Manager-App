@@ -85,16 +85,7 @@ This project was created as a final assignment, showcasing complete systems arch
 - Clear component separation and state management.
 
 ---
-
-## Getting Started
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/listhegreatest/Task-Manager-App
-cd roomease
-
-
-// ## Reflection
+## Reflection 
 
 This final project Made me realize I am capable of making a full stack app to work 100%. I applied everything I’ve learned in a real-world full-stack application.
 
@@ -103,3 +94,26 @@ Throughout the process, I learned how to correctly set up tools like Vercel for 
 One of my biggest challenges was making sure the app was 100% functional from front to back — including database connectivity, API communication, and UI updates. There were alot of moments where I recieved errors but i was still able to fix them. I had to troubleshoot across different parts of the stack. It was little frustating, but once I fixed it, it gave me a incredibly rewarding feeling.
 
 This final project showed me that I am capable of building and deploying a full-stack application on my own. It gave me the confidence to move forward as a developer and reinforced how much I’ve grown during this course.
+
+
+## Getting Started
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/listhegreatest/Task-Manager-App
+cd Task-Manager-App
+
+##Install Dependencies
+npm install 
+
+## Set Up Environment Variables 
+Create a .env.local file in the root directory and add your environment variables. 
+Example: DATABASE_URL=your_neon_database_url
+
+##Run the Development Server 
+npm run dev 
+ 
+
+
+
+
