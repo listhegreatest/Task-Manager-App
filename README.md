@@ -6,6 +6,8 @@ RoomEase is a full-stack web application designed to simplify household manageme
 
 This project was created as a final assignment, showcasing complete systems architecture and integration of core components of a modern web app.
 
+I made my own tutorial by prompting ChatGPT. I completed the Full Stack App by myself.
+
 ---
 
  ## Live Demo
